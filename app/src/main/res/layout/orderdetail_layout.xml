@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    app:ignore="NamespaceTypo">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/caerview"
+        android:layout_width="match_parent"
+        fresco:cardElevation="4dp"
+        android:layout_margin="4dp"
+        android:elevation="10dp"
+        fresco:cardCornerRadius="5dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="0.25"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgOrder"
+                        android:layout_width="70dp"
+                        android:background="@drawable/user"
+                        android:layout_height="match_parent">
+                    </ImageView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="0.75"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:padding="2dp"
+                        android:id="@+id/tvName"
+                        style="@style/text_color_style"
+                        android:minLines="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        ></TextView>
+
+                    <TextView
+                        android:padding="2dp"
+                        android:id="@+id/tvQuantity"
+                        style="@style/light_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        ></TextView>
+
+                    <TextView
+                        android:padding="2dp"
+                        android:id="@+id/tvPrice"
+                        style="@style/text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        ></TextView>
+
+                    <TextView
+                        android:padding="2dp"
+                        android:id="@+id/tvSoldBy"
+                        style="@style/text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        ></TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvReturn"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:padding="10dp"
+                style="@style/button_text_style"
+                android:text="RETURN"
+                android:background="@drawable/viewborder"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

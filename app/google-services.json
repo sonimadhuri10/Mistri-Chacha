@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "822563946649",
+    "firebase_url": "https://mistri-chacha-2e7d3.firebaseio.com",
+    "project_id": "mistri-chacha-2e7d3",
+    "storage_bucket": "mistri-chacha-2e7d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822563946649:android:08d88b56a8a908b1d27808",
+        "android_client_info": {
+          "package_name": "com.first.mistrichacha_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822563946649-nbth5m3ongnmjib5kslm7dkqcil3dmib.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.first.mistrichacha_application",
+            "certificate_hash": "ff4f2100e47cb63701c7ba04dc5491922a37f190"
+          }
+        },
+        {
+          "client_id": "822563946649-6bst9db0vhf4nqvhe4ns3djm8e57t3ge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFYiaZkshs0XY6ol85MRETY9sMQGJ0kn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822563946649-6bst9db0vhf4nqvhe4ns3djm8e57t3ge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/login_background"
+            android:layout_weight="0.4">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="right"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSkipandView"
+                android:layout_width="60dp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="3dp"
+                style="@style/button_text_style"
+                android:text="Skip"
+                android:background="@drawable/button_background"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="0.6">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Login"
+                android:gravity="center"
+                style="@style/Header_style"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <View
+                android:layout_marginTop="1dp"
+                android:layout_width="50dp"
+                android:layout_height="0.5dp"
+                android:background="@color/colorBlack">
+            </View>
+
+            <LinearLayout
+                android:id="@+id/llLoginNormal"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_marginTop="30dp"
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:hint="Enter Email"
+                        style="@style/text_style"
+                        android:layout_height="wrap_content">
+                    </EditText>
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:inputType="textPassword"
+                        android:hint="Enter Password"
+                        style="@style/text_style"
+                        android:layout_height="wrap_content">
+                    </EditText>
+
+                <TextView
+                    android:id="@+id/tvForgotPassword"
+                    android:layout_width="match_parent"
+                    android:text="Forgot Password ?"
+                    android:gravity="right"
+                    android:textSize="10dp"
+                    style="@style/button_color_text_style"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    style="@style/button_text_style"
+                    android:text="LOGIN"
+                    android:background="@drawable/button_background"
+                    android:layout_height="30dp">
+
+                </Button>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_width="20dp"
+                        android:background="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:layout_height="0.5dp">
+
+                    </View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="OR"
+                        style="@style/text_style"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                    <View
+                        android:layout_width="20dp"
+                        android:background="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:layout_height="0.5dp">
+
+                    </View>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnLoginViaOTp"
+                    android:layout_width="match_parent"
+                    style="@style/button_text_style"
+                    android:text="LOGIN VIA OTP"
+                    android:background="@drawable/button_background"
+                    android:layout_height="30dp">
+
+                </Button>
+
+                <LinearLayout
+                    android:id="@+id/llSignup"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Dont have an acoount ?"
+                        style="@style/text_style"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="SignUp"
+                        style="@style/text_color_style"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llLoginOtp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/etMobile"
+                    android:layout_width="match_parent"
+                    android:hint="Enter Mobile No"
+                    style="@style/text_style"
+                    android:maxLength="10"
+                    android:inputType="number"
+                    android:layout_height="wrap_content">
+                </EditText>
+
+
+                <Button
+                    android:id="@+id/btnGetOtp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    style="@style/button_text_style"
+                    android:text="GET OTP"
+                    android:background="@drawable/button_background"
+                    android:layout_height="30dp">
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llForgot"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/etforgotMobile"
+                    android:layout_width="match_parent"
+                    android:hint="Enter Your Register Mobile No"
+                    style="@style/text_style"
+                    android:maxLength="10"
+                    android:inputType="number"
+                    android:layout_height="wrap_content">
+                </EditText>
+
+                <Button
+                    android:id="@+id/btnVerifyNo"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    style="@style/button_text_style"
+                    android:text="VERIFY"
+                    android:background="@drawable/button_background"
+                    android:layout_height="30dp">
+                </Button>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

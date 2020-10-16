@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:minWidth="500dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+       <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="4dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgPro"
+                            android:layout_width="70dp"
+                            android:scaleType="fitXY"
+                            android:layout_height="70dp">
+                        </ImageView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvproductName"
+                        android:layout_width="match_parent"
+                        style="@style/text_color_style"
+                        android:textSize="15dp"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/tvPrice"
+                        android:layout_width="match_parent"
+                        style="@style/text_style"
+                        android:textSize="15dp"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+       <View
+           android:layout_marginTop="4dp"
+           android:layout_marginBottom="4dp"
+           android:layout_width="match_parent"
+           android:background="@color/colorPrimary"
+           android:layout_height="0.5dp">
+       </View>
+
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:textSize="14dp"
+                    android:text="How Many ?"
+                    style="@style/grey_text_style"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll2"
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="left"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="25dp"
+                            android:id="@+id/linear_decrement"
+                            android:gravity="center"
+                            android:background="@color/colorPrimary"
+                            android:layout_height="25dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@drawable/minus" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="25dp"
+                                android:gravity="center"
+                                android:id="@+id/tvCount"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="12dp"
+                                android:layout_height="25dp">
+
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_increment"
+                            android:layout_width="25dp"
+                            android:gravity="center"
+                            android:background="@color/colorPrimary"
+                            android:layout_height="25dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:background="@drawable/plus"
+                                android:layout_height="15dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="right"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:background="@drawable/rupee"
+                            android:layout_gravity="center_vertical"
+                            android:layout_height="15dp">
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/tvTotalPrice"
+                            android:layout_width="wrap_content"
+                            android:textSize="17dp"
+                            android:gravity="right"
+                            android:layout_marginLeft="3dp"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_height="wrap_content">
+                        </TextView>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAddTocart"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:textColor="@color/colorWhite"
+                android:text="Add To Basket"
+                android:visibility="gone"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvBuyNow"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:visibility="gone"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content">
+            </TextView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

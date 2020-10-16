@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="5dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Sorry!"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    style="@style/button_text_style"
+                    android:layout_height="40dp">
+                </TextView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvHeader"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        style="@style/text_style"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvLogin"
+                            android:text="Login"
+                            style="@style/button_text_style"
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/viewborder"
+                            android:layout_height="23dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tvSignup"
+                            android:layout_width="80dp"
+                            android:text="Signup"
+                            android:gravity="center"
+                            style="@style/button_text_style"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/viewborder"
+                            android:layout_height="23dp">
+
+                        </TextView>
+
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

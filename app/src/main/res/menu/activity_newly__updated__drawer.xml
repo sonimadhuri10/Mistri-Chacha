@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/homenew"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_category"
+            android:icon="@drawable/category"
+            android:title="Category" />
+
+        <item
+            android:id="@+id/nav_latest"
+            android:icon="@drawable/latestpro"
+            android:title="Latest Products" />
+        <item
+            android:id="@+id/nav_discount"
+            android:icon="@drawable/discount"
+            android:title="Discount Products" />
+        <item
+            android:id="@+id/nav_featured"
+            android:icon="@drawable/featured"
+            android:title="Featured Products" />
+        <item
+            android:id="@+id/nav_trending"
+            android:icon="@drawable/trending"
+            android:title="Trending Products" />
+
+
+        <item android:title="User">
+            <menu>
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/profile"
+                    android:title="Profile" />
+
+            </menu>
+        </item>
+
+
+        <item android:title="Mistri Chacha">
+            <menu>
+                <item
+                    android:id="@+id/nav_wholasale"
+                    android:icon="@drawable/wholesale"
+                    android:title="Wholesale Products" />
+
+                <item
+                    android:id="@+id/nav_ourallstore"
+                    android:icon="@drawable/stores"
+                    android:title="All Stores" />
+
+                <item
+                    android:id="@+id/nav_coupan"
+                    android:icon="@drawable/cpn"
+                    android:title="Coupons" />
+
+            </menu>
+        </item>
+
+    <item android:title="Application">
+        <menu>
+            <item
+                android:id="@+id/nav_aboutus"
+                android:icon="@drawable/aboutus"
+                android:title="About Us" />
+            <item
+                android:id="@+id/nav_contactus"
+                android:icon="@drawable/contact"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/nav_Terms"
+                android:icon="@drawable/terms"
+                android:title="Terms And Condition" />
+            <item
+                android:id="@+id/nav_privacy"
+                android:icon="@drawable/privacy"
+                android:title="Privacy Policy" />
+            <item
+                android:id="@+id/nav_faq"
+                android:icon="@drawable/faq"
+                android:title="FAQ" />
+        </menu>
+    </item>
+    </group>
+</menu>
+
+
