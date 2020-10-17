@@ -40,12 +40,13 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyViewHo
     SessionManagment sd;
     ProgressDialog pd;
     APIInterface apiInterface ;
-    RefreshInterface refreshInterface ;
+    RefreshInterface reeee ;
 
-    public MyOrderAdapter(ArrayList<PaymentModel.datalist> al, Context context) {
+    public MyOrderAdapter(ArrayList<PaymentModel.datalist> al, Context context , RefreshInterface refreshInterface ) {
         this.al = al;
         this.context = context;
-        refreshInterface = (RefreshInterface)context;
+        this.reeee = refreshInterface;
+
         sd = new SessionManagment(context);
         cd = new ConnectionDetector(context);
         pd = new ProgressDialog(context);
@@ -94,7 +95,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final PaymentModel.datalist data = al.get(position);
 
-        Picasso.with(context).load(data.photo).into(holder.imgStore);
+        Picasso.with(context).load(data.photo.replaceAll(" ", "%20")).into(holder.imgStore);
 
         holder.tvOrderId.setText("Order Id - "+data.order_number);
         holder.tvMethod.setText(data.method);
@@ -212,7 +213,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyViewHo
 
                         if(pro.success.equals("Order has been canceled")){
                             Toast.makeText(context, "Your cancel request has successfully submitted", Toast.LENGTH_SHORT).show();
-                            refreshInterface.RefreshEvent();
+                            reeee.RefreshEvent();
                         }else{
                             Toast.makeText(context, pro.success, Toast.LENGTH_SHORT).show();
                         }

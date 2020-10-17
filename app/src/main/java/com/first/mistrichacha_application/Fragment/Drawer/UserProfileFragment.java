@@ -18,7 +18,6 @@ import com.first.mistrichacha_application.Activity.AddWalletAmountActivity;
 import com.first.mistrichacha_application.Activity.ChnagepasswordActivity;
 import com.first.mistrichacha_application.Activity.DrawerActivity;
 import com.first.mistrichacha_application.Activity.EditProfile;
-import com.first.mistrichacha_application.Activity.MyOrderActivity;
 import com.first.mistrichacha_application.Activity.TransactionActivity;
 import com.first.mistrichacha_application.Activity.WishListActivity;
 import com.first.mistrichacha_application.Comman.ConnectionDetector;
@@ -43,7 +42,8 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
      APIInterface apiInterface ;
     private ShimmerFrameLayout mShimmerViewContainer;
     String name ="",mobile="",email="",address="",
-           city="",zip="",state="",country="",photo="",flat_no="",building="";
+           city="",zip="",state="",country="",photo="",flat_no="",
+            building="";
     TextView tvWallet ;
     ProgressDialog pd;
 
@@ -80,11 +80,11 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
         tvWallet.setOnClickListener(this);
         tvChnagePassword.setOnClickListener(this);
 
-        String key = getArguments().getString("order") ;
+      /*  String key = getArguments().getString("order") ;
         if(key.equals("order")){
             Intent in = new Intent(getActivity(),MyOrderActivity.class);
             startActivity(in);
-        }
+        }*/
 
         return  v;
 
@@ -181,11 +181,11 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
                 startActivity(in);
                 getActivity().overridePendingTransition(R.anim.left_in, R.anim.left_out);
                 break;
-            case R.id.tvHistory:
+         /*   case R.id.tvHistory:
                 Intent inpg = new Intent(getActivity(), MyOrderActivity.class);
                 startActivity(inpg);
                 getActivity().overridePendingTransition(R.anim.left_in, R.anim.left_out);
-                break;
+                break;*/
             case R.id.tvTransaction:
                 Intent inpt = new Intent(getActivity(), TransactionActivity.class);
                 startActivity(inpt);

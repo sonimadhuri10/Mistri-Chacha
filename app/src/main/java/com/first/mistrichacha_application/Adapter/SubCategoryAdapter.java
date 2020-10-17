@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.first.mistrichacha_application.Activity.ProductInfoActivity;
-import com.first.mistrichacha_application.Model.LatestProductModel;
 import com.first.mistrichacha_application.Model.SubCategoryModel;
 import com.first.mistrichacha_application.R;
 import com.squareup.picasso.Picasso;
@@ -68,7 +67,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final SubCategoryModel.datalist data = al.get(position);
 
-        String path =  "https://mistrichacha.com/Ecom/assets/images/thumbnails/";
+        String path =  "https://mistrichacha.com/assets/images/thumbnails/";
         Picasso.with(context).load(path+data.thumbnail).into(holder.imgCategory);
 
         holder.tvName.setText(data.name);

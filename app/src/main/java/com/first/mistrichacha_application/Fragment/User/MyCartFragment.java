@@ -83,8 +83,6 @@ public class MyCartFragment extends Fragment implements RefreshInterface , View.
 
         tvCheckout.setOnClickListener(this);
 
-
-
         return v;
     }
 

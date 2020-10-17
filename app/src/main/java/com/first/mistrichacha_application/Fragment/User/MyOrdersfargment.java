@@ -1,29 +1,26 @@
-package com.first.mistrichacha_application.Activity;
+package com.first.mistrichacha_application.Fragment.User;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.first.mistrichacha_application.Adapter.MyOrderAdapter;
-import com.first.mistrichacha_application.Adapter.SubCategoryAdapter;
 import com.first.mistrichacha_application.Comman.ConnectionDetector;
 import com.first.mistrichacha_application.Comman.SessionManagment;
 import com.first.mistrichacha_application.Interface.RefreshInterface;
-import com.first.mistrichacha_application.Model.CheckOutModel;
 import com.first.mistrichacha_application.Model.PaymentModel;
-import com.first.mistrichacha_application.Model.SubCategoryModel;
 import com.first.mistrichacha_application.Networkmanager.APIClient;
 import com.first.mistrichacha_application.Networkmanager.APIInterface;
 import com.first.mistrichacha_application.R;
@@ -31,7 +28,7 @@ import com.first.mistrichacha_application.R;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class MyOrderActivity extends AppCompatActivity implements RefreshInterface {
+public class MyOrdersfargment extends Fragment implements RefreshInterface {
 
     RecyclerView recyclerView ;
     private ShimmerFrameLayout mShimmerViewContainer;
@@ -42,39 +39,35 @@ public class MyOrderActivity extends AppCompatActivity implements RefreshInterfa
     LinearLayout llMain ;
     CardView cardView ;
 
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.sabcategory_layout);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.order_layout, container, false);
 
-        mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
-        cd = new ConnectionDetector(MyOrderActivity.this);
-        sd= new SessionManagment(MyOrderActivity.this);
+        mShimmerViewContainer = v.findViewById(R.id.shimmer_view_container);
+        cd = new ConnectionDetector(getActivity());
+        sd= new SessionManagment(getActivity());
         apiInterface = APIClient.getClient().create(APIInterface.class);
-        llMain=(LinearLayout)findViewById(R.id.llMain);
-        cardView =(CardView)findViewById(R.id.card);
+        llMain=(LinearLayout)v.findViewById(R.id.llMain);
+        cardView =(CardView)v.findViewById(R.id.card);
 
         cardView.setVisibility(View.GONE);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Order History");
-
-        recyclerView=(RecyclerView)findViewById(R.id.recycleview);
+        recyclerView=(RecyclerView)v.findViewById(R.id.recycleview);
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MyOrderActivity.this,LinearLayoutManager.VERTICAL,false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        retro();
+        retro(this);
 
+        return v;
     }
 
-    private void retro() {
+    private void retro(final RefreshInterface refreshInterface) {
         try {
             if (!cd.isConnectingToInternet()) {
-                Toast.makeText(MyOrderActivity.this, "Internet connection not available...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Internet connection not available...", Toast.LENGTH_SHORT).show();
             } else {
                 Call<PaymentModel> call = apiInterface.getMyOrder("Bearer "+sd.getKEY_APITOKEN());
                 call.enqueue(new Callback<PaymentModel>() {
@@ -87,7 +80,7 @@ public class MyOrderActivity extends AppCompatActivity implements RefreshInterfa
                         if (pro.dlist.size() == 0) {
                             llMain.setBackgroundResource(R.drawable.nodatafull);
                         } else {
-                            subCategoryAdapter = new MyOrderAdapter(pro.dlist,MyOrderActivity.this);
+                            subCategoryAdapter = new MyOrderAdapter(pro.dlist,getActivity(),refreshInterface);
                             recyclerView.setAdapter(subCategoryAdapter);
                         }
                     }
@@ -106,19 +99,10 @@ public class MyOrderActivity extends AppCompatActivity implements RefreshInterfa
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        onBackPressed();
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        finish();
-    }
 
     @Override
     public void RefreshEvent() {
-         retro();
+
+         retro(this);
     }
 }

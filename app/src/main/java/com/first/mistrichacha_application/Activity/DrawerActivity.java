@@ -42,6 +42,7 @@ import com.first.mistrichacha_application.Fragment.Drawer.UserProfileFragment;
 import com.first.mistrichacha_application.Fragment.Drawer.WholeSaleFragment;
 import com.first.mistrichacha_application.Fragment.Drawer.dashboard_Fragment;
 import com.first.mistrichacha_application.Fragment.User.MyCartFragment;
+import com.first.mistrichacha_application.Fragment.User.MyOrdersfargment;
 import com.first.mistrichacha_application.Fragment.User.NotificationFragment;
 import com.first.mistrichacha_application.Model.CartModel;
 import com.first.mistrichacha_application.Model.SignupModel;
@@ -71,7 +72,7 @@ public class DrawerActivity extends AppCompatActivity implements
     SessionManagment sd;
     ConnectionDetector cd;
     APIInterface apiInterface;
-    TextView tvName, tvEmail,tvOrders, tvWelcome, tvCartCount;
+    TextView tvName, tvEmail, tvWelcome, tvCartCount;
     CircleImageView circleImageView;
     LinearLayout llSingup, llLogin;
     String name = "", email = "", photo = "" , mobile="",address="",
@@ -108,7 +109,6 @@ public class DrawerActivity extends AppCompatActivity implements
         View headerView = navigationView.inflateHeaderView(R.layout.nav_header_newly__updated_);
         tvName = (TextView) headerView.findViewById(R.id.tvName);
         tvEmail = (TextView) headerView.findViewById(R.id.tvEmail);
-        tvOrders = (TextView) headerView.findViewById(R.id.tvOrders);
         tvWelcome = (TextView) headerView.findViewById(R.id.tvWelcome);
         circleImageView = (CircleImageView) headerView.findViewById(R.id.imgUser);
         llLogin = (LinearLayout) headerView.findViewById(R.id.ll_Login);
@@ -134,7 +134,6 @@ public class DrawerActivity extends AppCompatActivity implements
         imgLogout.setOnClickListener(this);
         llSingup.setOnClickListener(this);
         llLogin.setOnClickListener(this);
-        tvOrders.setOnClickListener(this);
         circleImageView.setOnClickListener(this);
 
         if(sd.getLOGIN_STATUS().equals("true")){
@@ -158,7 +157,7 @@ public class DrawerActivity extends AppCompatActivity implements
                 fragmentTransactioncart.replace(R.id.container, new MyCartFragment());
                 fragmentTransactioncart.commit();
             }else if(fragmentIntent.equalsIgnoreCase("orderdetails")){
-                UserProfileFragment fragment = new UserProfileFragment();
+               /* UserProfileFragment fragment = new UserProfileFragment();
                 Bundle bundle = new Bundle();
                 FragmentManager fragmentManager1 = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
@@ -167,7 +166,12 @@ public class DrawerActivity extends AppCompatActivity implements
                 fragmentTransaction1.setCustomAnimations(R.anim.fadein, R.anim.fade_out);
                 fragmentTransaction1.replace(R.id.container, fragment);
                 fragmentTransaction1.addToBackStack(null);
-                fragmentTransaction1.commit();
+                fragmentTransaction1.commit();*/
+                FragmentManager fragmentManagerpro = getSupportFragmentManager();
+                FragmentTransaction fragmentTransactionpro = fragmentManagerpro.beginTransaction();
+                fragmentTransactionpro.setCustomAnimations(R.anim.fadein, R.anim.fade_out);
+                fragmentTransactionpro.replace(R.id.container, new MyOrdersfargment());
+                fragmentTransactionpro.commit();
             }
         }
 
@@ -352,7 +356,18 @@ public class DrawerActivity extends AppCompatActivity implements
             fragmentTransaction1.setCustomAnimations(R.anim.fadein, R.anim.fade_out);
             fragmentTransaction1.replace(R.id.container, new TrendingProducts());
             fragmentTransaction1.commit();
-        } else if (id == R.id.nav_profile) {
+        }else if (id == R.id.nav_Orders) {
+            if(sd.getLOGIN_STATUS().equals("skip")){
+                showdialog();
+            }else{
+                drawer.closeDrawer(Gravity.LEFT);
+                FragmentManager fragmentManagerpro = getSupportFragmentManager();
+                FragmentTransaction fragmentTransactionpro = fragmentManagerpro.beginTransaction();
+                fragmentTransactionpro.setCustomAnimations(R.anim.fadein, R.anim.fade_out);
+                fragmentTransactionpro.replace(R.id.container, new MyOrdersfargment());
+                fragmentTransactionpro.commit();
+            }
+        }else if (id == R.id.nav_profile) {
             if(sd.getLOGIN_STATUS().equals("skip")){
                   showdialog();
             }else{
@@ -382,7 +397,6 @@ public class DrawerActivity extends AppCompatActivity implements
             fragmentTransaction1.setCustomAnimations(R.anim.fadein, R.anim.fade_out);
             fragmentTransaction1.replace(R.id.container, new AllStoreFragment());
             fragmentTransaction1.commit();
-
         } else if (id == R.id.nav_coupan) {
             drawer.closeDrawer(Gravity.LEFT);
             FragmentManager fragmentManager1 = getSupportFragmentManager();
@@ -450,11 +464,6 @@ public class DrawerActivity extends AppCompatActivity implements
                 in.putExtra("flat_no",flat_no);
                 in.putExtra("type","activity");
                 startActivityForResult(in, PROFILE_UPDATE_REQUEST);
-                overridePendingTransition(R.anim.left_in, R.anim.left_out);
-                break;
-            case R.id.tvOrders:
-                Intent inpg = new Intent(DrawerActivity.this, MyOrderActivity.class);
-                startActivity(inpg);
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
                 break;
             case R.id.imgCart:
@@ -596,7 +605,6 @@ public class DrawerActivity extends AppCompatActivity implements
                             llLogin.setVisibility(View.GONE);
                             llSingup.setVisibility(View.GONE);
                             tvWelcome.setVisibility(View.VISIBLE);
-                            tvOrders.setVisibility(View.VISIBLE);
 
                               name = pro.userdata.get(0).name;
                               mobile = pro.userdata.get(0).phone;

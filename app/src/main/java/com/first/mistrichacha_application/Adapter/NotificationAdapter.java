@@ -1,21 +1,16 @@
 package com.first.mistrichacha_application.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.first.mistrichacha_application.Activity.ShopProductsActivity;
 import com.first.mistrichacha_application.Model.SignupModel;
-import com.first.mistrichacha_application.Model.StoreModel;
 import com.first.mistrichacha_application.R;
 import com.squareup.picasso.Picasso;
 
@@ -60,13 +55,12 @@ public class NotificationAdapter  extends RecyclerView.Adapter<NotificationAdapt
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final SignupModel.notlist data = al.get(position);
 
-     Picasso.with(context).load(data.icon).into(holder.imgStore);
 
 
         if(data.icon.equals("")){
             holder.imgStore.setImageResource(R.drawable.addimage);
         }else{
-            Picasso.with(context).load(data.icon).into(holder.imgStore);
+            Picasso.with(context).load(data.icon.replaceAll(" ", "%20")).into(holder.imgStore);
         }
 
         holder.tvName.setText(data.title);

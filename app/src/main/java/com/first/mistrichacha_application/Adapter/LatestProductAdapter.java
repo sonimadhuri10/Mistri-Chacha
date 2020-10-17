@@ -71,7 +71,7 @@ public class LatestProductAdapter extends RecyclerView.Adapter<LatestProductAdap
         if(data.thumbnail.equals("")){
             holder.imgCategory.setImageResource(R.drawable.addimage);
         }else{
-            Picasso.with(context).load(data.thumbnail).into(holder.imgCategory);
+            Picasso.with(context).load(data.thumbnail.replaceAll(" ", "%20")).into(holder.imgCategory);
         }
 
         holder.tvName.setText(data.name);

@@ -26,6 +26,7 @@
             android:id="@+id/nav_featured"
             android:icon="@drawable/featured"
             android:title="Featured Products" />
+
         <item
             android:id="@+id/nav_trending"
             android:icon="@drawable/trending"
@@ -38,6 +39,11 @@
                     android:id="@+id/nav_profile"
                     android:icon="@drawable/profile"
                     android:title="Profile" />
+
+                <item
+                    android:id="@+id/nav_Orders"
+                    android:icon="@drawable/thumb_off"
+                    android:title="My Orders" />
 
             </menu>
         </item>

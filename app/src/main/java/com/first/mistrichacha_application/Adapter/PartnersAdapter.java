@@ -51,7 +51,7 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.MyView
         if(data.photo.equals("")){
             holder.imgPartner.setImageResource(R.drawable.ic_launcher_background);
         }else{
-            Picasso.with(context).load(data.photo).into(holder.imgPartner);
+            Picasso.with(context).load(data.photo.replaceAll(" ", "%20")).into(holder.imgPartner);
         }
     }
 

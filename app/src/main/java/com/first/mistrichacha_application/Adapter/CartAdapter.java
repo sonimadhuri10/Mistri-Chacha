@@ -3,7 +3,6 @@ package com.first.mistrichacha_application.Adapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.first.mistrichacha_application.Activity.DrawerActivity;
-import com.first.mistrichacha_application.Activity.LoginActivity;
 import com.first.mistrichacha_application.Activity.ProductInfoActivity;
 import com.first.mistrichacha_application.Comman.SessionManagment;
 import com.first.mistrichacha_application.DatabaseManager.DatabaseHelper;
@@ -44,7 +41,6 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.MyViewHolder>
         sd = new SessionManagment(context);
         this.refreshInterface = refreshInterface;
     }
-
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 

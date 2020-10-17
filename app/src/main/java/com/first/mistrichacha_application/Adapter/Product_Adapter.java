@@ -16,19 +16,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.first.mistrichacha_application.Activity.DrawerActivity;
 import com.first.mistrichacha_application.Activity.ProductInfoActivity;
 import com.first.mistrichacha_application.Model.FinalCategoryModel;
-import com.first.mistrichacha_application.Model.ProductModel;
 import com.first.mistrichacha_application.R;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
-import static android.provider.Settings.System.DATE_FORMAT;
 
 public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.MyViewHolder> {
     ArrayList<FinalCategoryModel.productlist> al;
@@ -83,8 +78,8 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.MyView
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
         final FinalCategoryModel.productlist data = al.get(position);
 
-         String path =  "https://mistrichacha.com/Ecom/assets/images/thumbnails/";
-         Picasso.with(context).load(path+data.thumbnail).into(holder.imgCategory);
+         String path =  "https://mistrichacha.com/assets/images/thumbnails/";
+         Picasso.with(context).load(path+data.thumbnail.replaceAll(" ", "%20")).into(holder.imgCategory);
 
          holder.tvName.setText(data.name);
          holder.tvPrice.setText(data.price);

@@ -11,13 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.first.mistrichacha_application.Activity.ProductInfoActivity;
-import com.first.mistrichacha_application.Interface.DeletInterface;
 import com.first.mistrichacha_application.Model.LatestProductModel;
 import com.first.mistrichacha_application.R;
 import com.squareup.picasso.Picasso;
@@ -67,7 +65,7 @@ public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.MyView
         if(data.thumbnail.equals("")){
             holder.imgCategory.setImageResource(R.drawable.addimage);
         }else{
-            Picasso.with(context).load(data.thumbnail).into(holder.imgCategory);
+            Picasso.with(context).load(data.thumbnail.replaceAll(" ", "%20")).into(holder.imgCategory);
         }
 
         holder.tvName.setText(data.name);

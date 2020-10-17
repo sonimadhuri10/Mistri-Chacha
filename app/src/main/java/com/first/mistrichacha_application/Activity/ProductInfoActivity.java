@@ -6,7 +6,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -19,12 +18,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,9 +53,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
 
 import retrofit2.Call;
@@ -293,6 +287,7 @@ public class ProductInfoActivity extends AppCompatActivity implements
                                 urlString = sliderList.get(i).photo.replaceAll(" ", "%20");
                                 url_maps.put(i, urlString);
                             }
+
                             Map<Integer, String> map = new TreeMap<Integer, String>(url_maps);
 
                             for (int name : map.keySet()) {

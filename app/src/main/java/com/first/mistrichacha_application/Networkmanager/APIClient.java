@@ -30,7 +30,7 @@ public class APIClient {
                 .readTimeout(5, TimeUnit.MINUTES)
                 .build();
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://mistrichacha.com/Ecom/api/")
+                .baseUrl("https://mistrichacha.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

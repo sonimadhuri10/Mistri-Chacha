@@ -15,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.first.mistrichacha_application.Activity.ProductInfoActivity;
-import com.first.mistrichacha_application.Model.FinalCategoryModel;
 import com.first.mistrichacha_application.Model.ProductModel;
 import com.first.mistrichacha_application.R;
 import com.squareup.picasso.Picasso;
@@ -64,7 +63,7 @@ public class RelatedProductAdapter extends RecyclerView.Adapter<RelatedProductAd
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final ProductModel.relatedproductInfo data = al.get(position);
 
-        Picasso.with(context).load(data.thumbnail).into(holder.imgCategory);
+        Picasso.with(context).load(data.thumbnail.replaceAll(" ", "%20")).into(holder.imgCategory);
 
         holder.tvName.setText(data.name);
         holder.tvPrice.setText(data.price);

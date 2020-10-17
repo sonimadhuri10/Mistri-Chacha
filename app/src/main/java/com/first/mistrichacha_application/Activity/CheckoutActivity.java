@@ -203,10 +203,18 @@ public class CheckoutActivity extends AppCompatActivity implements View.OnClickL
         tvShipprice.setText("Rs. "+sprice);
         tvpackPrice.setText("Rs. "+pprice);
 
-        t = Double.parseDouble(total);
-        tx = Double.parseDouble(tax);
-        txvl = (t * tx)/100 ;
-        taxprice = String.valueOf(txvl);
+        try{
+            t = Double.parseDouble(total);
+            if(tax.equals(null)){
+                tx = 0;
+            }else{
+                tx = Double.parseDouble(tax);
+            }
+            txvl = (t * tx)/100 ;
+            taxprice = String.valueOf(txvl);
+        }catch (Exception e){
+
+        }
 
         tvTax.setText("Rs. "+taxprice);
         p = String.valueOf(Double.parseDouble(d) + Double.parseDouble(sprice) + Double.parseDouble(pprice)+ Double.parseDouble(taxprice));
@@ -420,7 +428,6 @@ public class CheckoutActivity extends AppCompatActivity implements View.OnClickL
         }
 
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

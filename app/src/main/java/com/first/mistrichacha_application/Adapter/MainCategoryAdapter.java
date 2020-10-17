@@ -2,22 +2,17 @@ package com.first.mistrichacha_application.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.first.mistrichacha_application.Activity.SubCategoryActivity;
-import com.first.mistrichacha_application.Model.CategoryModel;
 import com.first.mistrichacha_application.Model.FinalCategoryModel;
 import com.first.mistrichacha_application.R;
 import com.squareup.picasso.Picasso;
@@ -64,7 +59,7 @@ public class MainCategoryAdapter extends RecyclerView.Adapter<MainCategoryAdapte
     if(data.image.equals("")){
         holder.imgCategory.setImageResource(R.drawable.teddy);
     }else{
-        Picasso.with(context).load(data.image).into(holder.imgCategory);
+        Picasso.with(context).load(data.image.replaceAll(" ", "%20")).into(holder.imgCategory);
     }
 
     holder.tvname.setText(data.name);

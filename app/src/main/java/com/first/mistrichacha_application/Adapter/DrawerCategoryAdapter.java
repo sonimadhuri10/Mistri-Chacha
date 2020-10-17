@@ -3,7 +3,6 @@ package com.first.mistrichacha_application.Adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.first.mistrichacha_application.Activity.SubCategoryActivity;
 import com.first.mistrichacha_application.Model.CategoryModel;
-import com.first.mistrichacha_application.Model.LatestProductModel;
 import com.first.mistrichacha_application.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DrawerCategoryAdapter extends RecyclerView.Adapter<DrawerCategoryAdapter.MyViewHolder> {
     ArrayList<CategoryModel.datalist> al;
@@ -68,7 +64,8 @@ public class DrawerCategoryAdapter extends RecyclerView.Adapter<DrawerCategoryAd
             holder.imgCategory.setImageResource(R.drawable.teddy);
           //  holder.circleImageView.setImageResource(R.drawable.teddy);
         }else{
-            Picasso.with(context).load(data.image).into(holder.imgCategory);
+            Picasso.with(context).load(data.image.replaceAll(" ", "%20")).into(holder.imgCategory);
+
            // Picasso.with(context).load(data.image).into(holder.circleImageView);
         }
 
