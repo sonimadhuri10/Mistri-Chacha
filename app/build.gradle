@@ -9,11 +9,14 @@ android {
         minSdkVersion 19
         targetSdkVersion 30
         multiDexEnabled true
-        versionCode 1
+        versionCode 4
         versionName "1.0"
-
+        archivesBaseName = "Mistrichacha"+versionName ;
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    // /home/abc/AndroidStudioProjects/Mistri-Chacha-master/app/mistrichcha_app.jks
+    // password - 123456
+    // alias - key0
 
     buildTypes {
         release {

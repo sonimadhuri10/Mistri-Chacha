@@ -103,7 +103,6 @@ public class LatestProductAdapter extends RecyclerView.Adapter<LatestProductAdap
                 in.putExtra("like","");
                 context.startActivity(in);
                 ((Activity) context).overridePendingTransition(R.anim.left_in, R.anim.left_out);
-
             }
         });
     }

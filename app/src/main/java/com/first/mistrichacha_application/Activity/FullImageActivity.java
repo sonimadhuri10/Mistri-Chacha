@@ -3,19 +3,19 @@ package com.first.mistrichacha_application.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.first.mistrichacha_application.Comman.ConnectionDetector;
+import com.first.mistrichacha_application.Comman.NewZoomableImageView;
 import com.first.mistrichacha_application.R;
 import com.squareup.picasso.Picasso;
 
 public class FullImageActivity extends AppCompatActivity {
 
     ConnectionDetector cd;
-    ImageView imageView ;
+    NewZoomableImageView imageView ;
     String image  = "";
 
     @Override
@@ -24,7 +24,7 @@ public class FullImageActivity extends AppCompatActivity {
         setContentView(R.layout.fullimageview);
 
         cd = new ConnectionDetector(FullImageActivity.this);
-        imageView = (ImageView)findViewById(R.id.imgFullView);
+        imageView = (NewZoomableImageView)findViewById(R.id.imgFullView);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);

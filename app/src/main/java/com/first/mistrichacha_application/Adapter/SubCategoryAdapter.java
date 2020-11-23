@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.MyViewHolder> {
+
     ArrayList<SubCategoryModel.datalist> al;
     ArrayList<SubCategoryModel.datalist> alfilter;
     Context context;
@@ -33,7 +34,6 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
         this.context = context;
         this.alfilter = new ArrayList<SubCategoryModel.datalist>();
         this.alfilter.addAll(al);
-
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -75,8 +75,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
         holder.tvPriviousPrice.setPaintFlags(holder.tvPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         holder.tvPrice.setText(data.price);
-         holder.tvRating.setText(data.rating);
-
+        holder.tvRating.setText(data.rating);
 
         if(data.discount.equals("0")){
             holder.tvDiscount.setText("New ");
@@ -91,7 +90,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
             holder.tvStock.setText("In Stock");
             holder.tvStock.setTextColor(Color.parseColor("#008000"));
         }
-
+   
         holder.llProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,7 +99,6 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
                 in.putExtra("like","");
                 context.startActivity(in);
                 ((Activity) context).overridePendingTransition(R.anim.left_in, R.anim.left_out);
-
             }
         });
     }
@@ -124,8 +122,5 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
         }
         notifyDataSetChanged();
     }
-
-
-
 
 }

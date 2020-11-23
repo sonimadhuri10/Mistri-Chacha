@@ -1,6 +1,5 @@
 package com.first.mistrichacha_application.DatabaseManager;
 
-import android.app.TaskStackBuilder;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -11,7 +10,6 @@ import com.first.mistrichacha_application.Model.CartModel;
 
 import java.util.ArrayList;
 
-import static android.icu.text.MessagePattern.ArgType.SELECT;
 import static com.google.firebase.analytics.FirebaseAnalytics.Param.ITEM_ID;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -35,11 +33,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null,1);
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,ITEM_ID TEXT,ITEM_NAME TEXT,PRICE TEXT,QUANTITY TEXT,DISCRIPTION TEXT,CATEGORY TEXT,IMAGE TEXT,TOTAL TEXT,COLOR TEXT,SIZE TEXT)");
-
     }
 
     @Override

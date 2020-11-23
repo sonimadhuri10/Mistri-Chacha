@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
-import com.first.mistrichacha_application.Adapter.MyOrderAdapter;
 import com.first.mistrichacha_application.Adapter.TransactionAdapter;
 import com.first.mistrichacha_application.Comman.ConnectionDetector;
 import com.first.mistrichacha_application.Comman.SessionManagment;
@@ -99,6 +98,8 @@ public class TransactionActivity extends AppCompatActivity {
 
 
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

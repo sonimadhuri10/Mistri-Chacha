@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -38,7 +37,7 @@
 
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_test_xDH74d48cwl8DF" />
+            android:value="rzp_live_Ip0Go9JOWDIlFg" />
 
       <!--  <activity
             android:name=".Location.PlacePredictionProgrammatically"
@@ -82,6 +81,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
+
         <activity
             android:name=".Activity.SignupActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -94,17 +94,20 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
 
+
         <activity
             android:name=".Activity.EditProfile"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
+
         <activity
             android:name=".Activity.ForgotPassword_Activity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
+
 
         <activity
             android:name=".Activity.SubCategoryActivity"
@@ -147,8 +150,6 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemenew" />
-
-
 
         <activity
             android:name=".Activity.BuyAndReturnpolicy"
@@ -237,3 +238,4 @@
     </application>
 
 </manifest>
+

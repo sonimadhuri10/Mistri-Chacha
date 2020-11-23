@@ -104,7 +104,6 @@ public class DrawerActivity extends AppCompatActivity implements
         imgLogout = (ImageView) findViewById(R.id.imgLogout);
         tvCartCount = (TextView) findViewById(R.id.tvCartCount);
 
-
         // HEADER SECTION
         View headerView = navigationView.inflateHeaderView(R.layout.nav_header_newly__updated_);
         tvName = (TextView) headerView.findViewById(R.id.tvName);
